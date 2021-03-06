@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Primeiro programa</title>
+    <style>
+        body {
+            background-color: rgb(105, 85, 89);
+            color: white;
+            font: normal 20pt Arial;
+        }
+
+        div.somar {
+            font: normal 18pt Oswald;
+        }
+
+        input {
+            font: normal 18pt Oswald;
+            width: 100px;
+        }
+
+        div#res{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='somar'>
+        <h1>Somando valores</h1>
+        <input type="number" name="txtn1" id="txtn1"> + 
+        <input type="number" name="txtn2" id="txtn2">
+        <input type="button" value="Somar" onclick="somar()">
+        <div id="res">
+            Resultado
+        </div>
+    </div>
+    <div>
+        <p id='xxx'>Olá Mundo</p>
+        <h4 id='msg'>Isso é um titulop H4</h4>
+    </div>
+    <div>
+        <p>Segundo paragrafo</p>
+        <h3 name='ddd'>Isso é um titulo H3</h3>
+    </div>
+    <div>
+       <!-- <p id='zxc' onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()"> -->
+        <p id='zxc'>
+            Outro paragrafo para interagir
+        </p>
+        <h5 class='eee'>Isso é um titulo H5</h5>
+    </div>
+    <script>
+
+        function somar() {
+            var tn1 = window.document.getElementById('txtn1')
+            var tn2 = window.document.querySelector('input#txtn2')
+            var res = window.document.getElementById('res')
+            var n1 = Number(tn1.value)
+            var n2 = Number(tn2.value)
+            var s = n1 + n2
+            res.innerHTML = `A soma entre ${n1} e ${n2} é igual a <strong>${s}</strong>`
+        }
+
+        var ab = window.document.getElementById('zxc')
+
+        ab.addEventListener('click', clicar)
+        ab.addEventListener('mouseenter', entrar)
+        ab.addEventListener('mouseout', sair)
+
+        function clicar() {
+            ab.innerText = 'Clicou'
+            ab.style.background = 'red'
+        }
+
+        function entrar() {
+            ab.innerText = 'Entrou'
+            ab.style.background = 'blue'
+        }
+
+        function sair() {
+            ab.innerText = 'Sair'
+            ab.style.background = 'green'
+        }
+        /*
+        //Versão nova do ecma pode usar apenas Number que ele se vira 
+        var n1 = Number(window.prompt('Digite um numero: '))
+        var n2 = Number(window.prompt('Digite outro numero'))
+        var s = n1 + n2
+        document.write(`a soma é: ${s} <br/>`)
+
+        var n3 = Number.parseFloat(window.prompt('Digite um numero: '))
+        var n4 = Number.parseFloat(window.prompt('Digite outro numero'))
+        var t = n3 + n4
+        document.write(`a soma é: ${t} <br/>`)
+
+        var n5 = Number.parseInt(window.prompt('Digite um numero: '))
+        var n6 = Number.parseInt(window.prompt('Digite outro numero'))
+        var u = n5 + n6
+        document.write(`a soma é: ${u} <br/>`)
+
+        letra1 = String(n5)         // conversao de numero para string
+        letra2 = n6.toString()      // conversao de numero para string
+
+        console.log(typeof n5)
+        console.log(typeof n6)
+        console.log(typeof letra1)
+        console.log(typeof letra2)
+        */
+
+        let nome = window.prompt('qual seu nome?')
+        let salario = 1500.45
+        let idade = 17
+
+        console.log(typeof salario)
+        console.log(typeof nome)
+
+        document.write(`seu nome ${nome} tem ${nome.length} letras <br/>`) //interpolação
+        document.write(`seu nome ${nome} em MAIUSCULO ${nome.toUpperCase()} <br/>`)
+        document.write(`seu nome ${nome} em minusculo ${nome.toLocaleLowerCase()}<br/>`)
+        document.write(`seu salario é: ${salario.toFixed(2).replace('.', ',')}<br/>`)
+        document.write(`seu salario em real: ${salario.toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })} <br/>`)
+        document.write(`seu salario em dolar: ${salario.toLocaleString('en', { style: 'currency', currency: 'USD' })}<br/>`)
+        document.write(`seu salario em euro: ${salario.toLocaleString('en', { style: 'currency', currency: 'EUR' })}<br/><br/>`)
+
+        document.write(`${idade >= 18 ? 'MAIOR' : 'MENOR'} <br/><br/>`) //operador ternário
+
+        document.write(window.navigator.appName, `<br/>`)
+        document.write(window.document.URL, `<br/>`)
+        document.write(window.document.charset, `<br/><br/>`)
+
+        // getElementsByTagName
+        var p1 = window.document.getElementsByTagName('p')[0]
+        window.document.write(p1.innerText, `<br/>`)
+
+        var p2 = window.document.getElementsByTagName('p')[1]
+        window.document.write(p2.innerText, `<br/><br/>`)
+
+        //getElementsById
+        var pp1 = window.document.getElementById('msg')
+        window.document.write(pp1.innerText, `<br/>`)
+
+        //getElementsByName
+        var pp2 = window.document.getElementsByName('ddd')[0]
+        window.document.write(pp2.innerText, `<br/>`)
+
+        //getElementsByClassName
+        var pp3 = window.document.getElementsByClassName('eee')[0]
+        window.document.write(pp3.innerText, `<br/>`)
+
+        //Por Seletor
+        var d = window.document.querySelector('p#xxx')
+        window.document.write(d.innerText, `<br/>`)
+        d.style.background = 'green'
+
+        
+    </script>
+</body>
+
+</html>

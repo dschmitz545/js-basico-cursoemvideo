@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Estatística de números</title>
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <header>
+        <h1>Estatística de números</h1>
+    </header>
+    <section>
+        <div>
+            <p>
+                <label for="txtnum">Número (entre 1 e 100)</label>
+                <input type="number" name="txtnum" id="txtnum">
+                <input type="button" value="Adicionar" onclick="adicionar()">
+            </p>
+            <p>
+                <select name="resnum" id="resnum" size="10">
+                    <!-- <option value="v1">adicione os numero no campo acima</option> -->
+                </select>
+            </p>
+            <p>
+                <input type="button" value="Finalizar" onclick="validar()">
+            </p>
+        </div>
+        <div id="res">
+
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2021 - Diego Schmitz</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
